@@ -51,5 +51,4 @@ public class _RollDice {
 		
 		System.out.printf("Total %d = %.2f %%", epochs, total);
 	}
-
 }
