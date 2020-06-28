@@ -93,13 +93,13 @@ def responder(texto_usuario):
         resposta_chatbot = resposta_chatbot + lista_sentencas[indice_sentenca]
         return resposta_chatbot
 
-'''continuar = True
+continuar = True
 print('Olá, sou um chatbot e vou responder perguntas sobre IA: ')
 while(continuar == True):
     texto_usuario = input()
     texto_usuario = texto_usuario.lower()
     if(texto_usuario != 'sair'):
-        if(responder_saudacao(texto_usuario) != None):
+        if(responder_saudacao(texto_usuario) != None):                                     #TESTE NO CONSOLE
             print('Chatbot: ' + responder_saudacao(texto_usuario))
         else:
             print('Chatbot: ')
@@ -108,24 +108,24 @@ while(continuar == True):
     
     else:
         continuar = False
-        print('Chatbot: Até Breve!')'''
+        print('Chatbot: Até Breve!')
 
 #etapa: criação da API Flask
-app = Flask(__name__)   
+'''app = Flask(__name__)   
 
 @app.route("/<string:txt>", methods= ["POST"])
 def conversar(txt):
     resposta = ''
     texto_usuario = txt
     texto_usuario = texto_usuario.lower()
-    if(responder_saudacao(texto_usuario) != None):
+    if(responder_saudacao(texto_usuario) != None):                                  #TESTE NO POSTMAN (APP DESKTOP)
         resposta = responder_saudacao(texto_usuario)
     else:
         resposta = responder(preprocessamento(texto_usuario))
         lista_sentencas_preprocessadas.remove(preprocessamento(texto_usuario))
     return jsonify({'texto_respondido': resposta})
 
-app.run(port= 5000, debug= False)
+app.run(port= 5000, debug= False)'''
 
 
 
